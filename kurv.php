@@ -57,5 +57,8 @@ include("./controller.php");
     <ul>
         <a href="./webshop.php">Gå til kollektion</a>
     </ul>
+    <ul>
+        <a href="./checkout.php">Gå til betaling</a>
+    </ul>
 </body>
 </html>
