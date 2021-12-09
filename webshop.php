@@ -14,20 +14,39 @@ include("./controller.php");
 
 <body bgcolor="#ffcccb"> 
     <h1>
-        Eksempel på gallerivisning
+        Eksempel på kollektionsvisning
     </h1>
+
+    <form method="post">
+        <input type="text" name = "filter">
+        <button type="submit">sæt max pris</button>
+    </form>
+
     <?php
     for ($i = 0; $i<6; $i++){
-        echo printProduct($i);
-        ?>
-        <ul>
-        <a href="./gallerivisning.php">Se produkt</a>
-        </ul>
-        <hr>
-        <?php
-        
-    }
+        if(isset($_POST["filter"])){
+            if(filter($_POST["filter"],$i)==false){
+                echo printProduct($i);
+            ?>
+            <ul>
+            <a href="./gallerivisning.php?product=<?php echo $i; ?>">Se produkt</a>
+            </ul>
     
+            <hr>
+            <?php
+            }
+
+        } else{
+            echo printProduct($i);
+            ?>
+            <ul>
+            <a href="./gallerivisning.php?product=<?php echo $i; ?>">Se produkt</a>
+            </ul>
+    
+            <hr>
+            <?php
+        }
+    }
     ?>
     
 </body>

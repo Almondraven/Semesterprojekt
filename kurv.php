@@ -15,16 +15,34 @@ include("./controller.php");
         Kurv
     </h1>
     <ul>
-        <?php foreach(getFromFile() as $key => $product){?>
-            <?php 
+        <?php foreach(getFromFile() as $key => $product){
             
             foreach($product as $placenr => $numProducts){
                 
                 if ($placenr == 0){
                     echo printProduct($numProducts)."<br>";
                 }
-                else{
-                    echo $numProducts."<br>";
+                else if($placenr == 1) {
+                    echo "Sædehøjde: ". $numProducts."<br>";
+                }
+                else if($placenr == 2) {
+                    echo "Sædedybde: ". $numProducts."<br>";
+                }
+                else if($placenr == 3) {
+                    echo "Sædebredde: ".$numProducts."<br>";
+                }
+                else if($placenr == 4) {
+                    echo "Ryghøjde: ". $numProducts."<br>";
+                }
+                else if($placenr == 5) {
+                    if ($numProducts=="on"){
+                        echo "elektrisk masssage +6000 kroner "."<br>";
+                    }
+                }
+                else if($placenr == 6) {
+                    if ($numProducts=="on"){
+                        echo "ekstra benstøtte +500 kroner "."<br>";
+                    }
                 }
                 
             } 
@@ -33,6 +51,9 @@ include("./controller.php");
             <hr>
         <?php }?>
     </ul>
+    <?php
+        echo "samlet pris ". beregnPrisKurv();
+    ?>
     <ul>
         <a href="./webshop.php">Gå til kollektion</a>
     </ul>

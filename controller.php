@@ -8,4 +8,7 @@ if (isset($_POST["seatHeight"])
 if(isset($_GET["key"])){
     deleteProduct();
 }
+if(isset($_GET["product"])){
+    selectProduct();
+}
 ?>

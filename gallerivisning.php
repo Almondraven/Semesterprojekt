@@ -12,11 +12,11 @@ include("./controller.php");
 </head>
 <body bgcolor="33ffa4">
     <h1>
-        Produktvisning
+        Gallerivisning
     </h1>
     
     <?php
-        echo printProduct(0);
+        echo printProduct(selectProduct());
     ?>
     <form method="post">
     Sædehøjde (mellem 30 og 50)
@@ -31,7 +31,8 @@ include("./controller.php");
     <input type="checkbox" name="elMassage"> +6000 kroner <br><br>
     ekstra benstøtte
     <input type="checkbox" name="exLegsupp"> +500 kroner <br><br>
-    <button type="submit">Tilføj til kurv</button>
+    <button type="submit">Tilføj til kurv</button>   
+    </form>
     <hr>
     <ul>
         <a href="./kurv.php">Gå til kurv</a>
@@ -40,6 +41,5 @@ include("./controller.php");
     <ul>
         <a href="./webshop.php">Gå tilbage</a>
     </ul>
-</form>
 </body>
 </html>
