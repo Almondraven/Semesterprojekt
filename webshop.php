@@ -25,7 +25,7 @@ include("./controller.php");
     <?php
     for ($i = 0; $i<6; $i++){
         if(isset($_POST["filter"])){
-            if(filter($_POST["filter"],$i)==false){
+            if(filter($_POST["filter"],$i)==true){
                 echo printProduct($i);
             ?>
             <ul>

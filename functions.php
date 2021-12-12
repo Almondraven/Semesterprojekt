@@ -128,9 +128,9 @@ function printProduct($chairNumber){
 function filter($maxP,$productnr){
     $prisArray = [14995,27545,14120,14445,10960,7200];
     if($maxP<$prisArray[$productnr]){
-        return true;
-    } else {
         return false;
+    } else {
+        return true;
     }
 }
 
