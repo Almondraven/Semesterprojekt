@@ -50,7 +50,7 @@ function deleteProduct(){
 
 function selectProduct(){
     $productnr = ($_GET["product"]);
-    header("http://localhost/Semesterprojekt/gallerivisning.php");
+    //header("http://localhost/Semesterprojekt/gallerivisning.php");
     return $productnr;
 }
 
